@@ -4,15 +4,13 @@ A JavaScript project for the Algorithm and Structural Foundations
 assignment. This project explores data structures and algorithms
 by building a phone book step by step.
 
-## Current Features
+## Current Progress
 
-- Store contacts in an array of objects.
-- Include an ID, name, phone number, and email for each contact.
-- Add contacts using an addContact function.
-- Check for missing or empty names and phone numbers before adding.
-- Find a contact by ID using a findContactById function.
-- Display contacts in the terminal.
+Contact storage, adding contacts, basic validation, finding contacts
+by ID, and updating phone numbers are implemented.
 
+Next tutorial step: use findIndex() to locate a contact's array
+position, then implement deleting a contact by ID.
 ## Data Structure
 
 The phone book uses an array of objects. Each object represents
@@ -32,6 +30,14 @@ The sample contacts and demonstration calls run automatically.
 Data is stored in memory and resets each time the program runs.
 
 ## Functions Implemented
+### updateContactPhone(id, newPhone)
+
+Finds a contact by ID, validates the new phone number, and updates
+the existing contact. Removes leading and trailing whitespace.
+
+Updating a contact does not change the total number of contacts.
+The function uses a linear search, giving it O(n) worst-case
+time complexity.
 
 ### addContact(contact)
 

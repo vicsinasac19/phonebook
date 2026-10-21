@@ -71,3 +71,24 @@ function findContactById(id) {
 }
 // Call the function and display the result.
 console.log(findContactById(3));
+// Update a contact's phone number using their unique ID.
+function updateContactPhone(id, newPhone) {
+  const contact = findContactById(id);
+
+  if (!contact) {
+    console.log("Contact not found.");
+    return;
+  }
+
+  if (typeof newPhone !== "string" || newPhone.trim() === "") {
+    console.log("A phone number is required.");
+    return;
+  }
+
+  contact.phone = newPhone.trim();
+  console.log("Phone number updated.");
+}
+updateContactPhone(4, "514-555-0199");
+
+console.log(findContactById(4));
+console.log("Total contacts:", contacts.length);
