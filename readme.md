@@ -1,68 +1,70 @@
 # Phone Book Sorting Exercise
 
 A JavaScript project for the Algorithm and Structural Foundations
-assignment. This project explores data structures and algorithms
-by building a phone book step by step.
+assignment, built step by step to practise data structures and algorithms.
 
-## Current Progress
-
-Contact storage, adding contacts, basic validation, finding contacts
-by ID, and updating phone numbers are implemented.
-
-Next tutorial step: use findIndex() to locate a contact's array
-position, then implement deleting a contact by ID.
 ## Data Structure
 
-The phone book uses an array of objects. Each object represents
-one contact, and the array holds the contact collection.
+Contacts are stored in an array of objects. Each contact contains:
+- ID
+- Name
+- Phone number
+- Email address
 
-Each contact has a unique ID. An ID identifies a contact, while
-an array index represents its current position. Sorting can change
-a contact's index without changing its ID.
+An ID identifies a contact. An index represents its current array
+position, which can change after deletion or sorting.
+
+Data is stored in memory and resets whenever the program runs.
 
 ## How to Run
 
 Install Node.js, open a terminal in the project folder, and run:
 
-    node phoneBook.js
+```bash
+node phonebook.js
+```
 
-The sample contacts and demonstration calls run automatically.
-Data is stored in memory and resets each time the program runs.
+The demonstration calls run automatically and display their results
+in the terminal.
 
-## Functions Implemented
-### updateContactPhone(id, newPhone)
+## Implemented Functions
 
-Finds a contact by ID, validates the new phone number, and updates
-the existing contact. Removes leading and trailing whitespace.
+- `addContact(contact)`: validates the required name and phone number,
+  then adds the contact.
+- `findContactById(id)`: returns the matching contact, or undefined.
+- `updateContactPhone(id, newPhone)`: validates and updates a contact's
+  phone number.
+- `deleteContact(id)`: finds and removes a contact by ID. If the ID
+  does not exist, the array remains unchanged.
+- `merge(left, right)`: combines two sorted arrays alphabetically by name.
+- `mergeSort(entries)`: recursively splits the array and uses the merge
+  helper to return a sorted copy.
 
-Updating a contact does not change the total number of contacts.
-The function uses a linear search, giving it O(n) worst-case
-time complexity.
+## Sorting Example
 
-### addContact(contact)
+```js
+console.table(mergeSort(contacts));
+```
 
-Checks that a contact has a name and phone number, then adds
-the contact to the end of the array.
+Displays contacts alphabetically by name without changing the order
+of the original contacts array.
 
-### findContactById(id)
+## Algorithm Efficiency
 
-Checks contacts in sequence and returns the first matching ID.
-Returns undefined if no match exists.
+Merge sort splits the array until each piece contains one contact
+or fewer, then merges the pieces into sorted order.
 
-This is a linear search with O(n) worst-case time complexity:
-it may need to check every contact.
+- Sorting time: O(n log n).
+- Auxiliary space: O(n).
+- Finding, updating, and deleting by ID: O(n) worst-case time.
 
-## Planned Features
+## Next Steps
 
-- Update contact details.
-- Delete contacts by ID.
-- Sort contacts by name, phone number, and email using merge sort.
-- Add an interactive interface.
-- Document the sorting algorithm and demonstrate its results.
+- Finish passing a selected sorting field through both sorting functions.
+- Demonstrate sorting by phone number and email.
+- Review validation and documentation before submission.
 
-## Current Progress
+## Resume Point
 
-Contact storage, adding contacts, basic validation, and finding
-contacts by ID are implemented.
-
-Next tutorial step: implement updating a contact's phone number."# phonebook" 
+Deletion and merge sort by name are working.
+The next tutorial step is to finish support for selecting the sort field.
