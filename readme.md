@@ -1,3 +1,13 @@
+# The story behind the code
+
+One challenge I faced was keeping track of how the merge sort functions worked together. I had added the `merge()` helper but missed the `mergeSort()` function that splits the contacts into smaller groups. Reviewing my actual code helped identify the missing piece.
+
+The solution appeared when I compared contacts to cards: split them into smaller piles, then combined them alphabetically. Adding comments before each new section also helped me follow the logic. Next time, I would build and check one complete function at a time, with clear comments and small examples, before moving to the next step.
+
+I also struggled with some of the symbols. I have dyslexia and the < sign and > sign I often get reversed and that caused me some struggle with errors.
+
+I will try to limit the comments in future builds, but for now it helps me keep track of my thoughts when coding.
+
 # Phone Book Sorting Exercise
 
 A JavaScript console application for the Algorithm and Structural Foundations assignment.
